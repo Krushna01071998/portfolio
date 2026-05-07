@@ -167,8 +167,8 @@ export default function Home() {
           <div>
             <p className="text-green-700 text-xs mb-2">$ ls links/</p>
             <div className="flex flex-wrap gap-6 text-sm">
-              <a href="/projects" className="text-green-500 hover:text-green-300 underline underline-offset-4 transition-colors">
-                ./projects
+              <a href="https://github.com/Krushna01071998/CRM-TOOL-HR-Portal.git" className="text-green-500 hover:text-green-300 underline underline-offset-4 transition-colors">
+                ./personal-projects
               </a>
               <a href="https://github.com/Krushna01071998" target="_blank" rel="noopener noreferrer" className="text-green-500 hover:text-green-300 underline underline-offset-4 transition-colors">
                 ./github
