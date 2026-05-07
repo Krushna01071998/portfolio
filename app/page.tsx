@@ -82,6 +82,9 @@ export default function Home() {
         <div className="flex items-center gap-4">
           <span className="text-green-800">SPR Software Systems — Senior Developer</span>
           <span>{time}</span>
+          <a href="/Krushna-Chaudhari.pdf" download="Krushna-Chaudhari.pdf" className="border border-green-800 text-green-600 hover:text-green-400 hover:border-green-600 text-xs px-2 py-1 transition-colors">
+            Download Resume
+          </a>
         </div>
       </div>
 
@@ -178,6 +181,9 @@ export default function Home() {
               </a>
               <a href="tel:+917385498630" className="text-green-500 hover:text-green-300 underline underline-offset-4 transition-colors">
                 ./phone
+              </a>
+              <a href="/Krushna-Chaudhari.pdf" download="Krushna-Chaudhari.pdf" className="text-green-500 hover:text-green-300 underline underline-offset-4 transition-colors">
+                ./resume
               </a>
             </div>
           </div>
