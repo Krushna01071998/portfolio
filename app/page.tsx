@@ -30,6 +30,36 @@ const stats = [
   { label: "Enterprise Clients", value: "3" },
 ]
 
+const certifications = [
+  {
+    name: "Confluent Apache Kafka Fundamentals Accreditation",
+    issuer: "Confluent",
+    issued: "May 2026",
+    expiry: "May 2028",
+    skills: ["Apache Kafka", "Data Streaming", "Confluent Platform"],
+    url: "https://certificates.confluent.io/2f8384b5-4d75-4405-a25b-ea673b30efbe",
+    icon: "⬡",
+  },
+  {
+    name: "Introduction to Containers, Kubernetes & OpenShift",
+    issuer: "Cognitive Class (IBM)",
+    issued: "May 2026",
+    expiry: null,
+    skills: ["Docker", "Kubernetes", "OpenShift"],
+    url: "https://courses.cognitiveclass.ai/certificates/10dd7d7c5fa04311a26dd7d493de273f",
+    icon: "◎",
+  },
+  {
+    name: "Docker Essentials: A Developer Introduction",
+    issuer: "Cognitive Class (IBM)",
+    issued: "May 2026",
+    expiry: null,
+    skills: ["Docker", "CI/CD", "Containerization"],
+    url: "https://courses.cognitiveclass.ai/certificates/9adecce28cd14dfb9b6347f3e3355e89",
+    icon: "◎",
+  },
+]
+
 export default function Home() {
   const [displayed, setDisplayed] = useState("")
   const [roleIndex, setRoleIndex] = useState(0)
@@ -236,6 +266,53 @@ export default function Home() {
           </div>
 
         </div>
+      </div>
+
+      <div className="mt-10 border-t border-green-900 pt-6 max-w-4xl">
+        <p className="text-green-800 text-xs mb-3">$ ls certifications/</p>
+        <div className="space-y-3">
+          {certifications.map((cert) => (
+            <div key={cert.name} className="border border-green-900 p-4 hover:border-green-700 transition-colors group">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
+
+                <div className="flex items-start gap-3 flex-1">
+                  <span className="text-green-600 text-lg mt-0.5 flex-shrink-0">{cert.icon}</span>
+                  <div className="space-y-1">
+                    <p className="text-green-300 text-sm font-bold group-hover:text-green-200 transition-colors">
+                      {cert.name}
+                    </p>
+                    <p className="text-green-700 text-xs">
+                      {cert.issuer} · Issued {cert.issued}
+                      {cert.expiry && (
+                        <span className="ml-2 border border-green-900 text-green-800 px-1 py-0.5 text-xs">
+                          valid until {cert.expiry}
+                        </span>
+                      )}
+                    </p>
+                    <div className="flex flex-wrap gap-1 mt-1">
+                      {cert.skills.map((s) => (
+                        <span key={s} className="text-green-800 text-xs border border-green-900 px-1.5 py-0.5">
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <a
+                  href={cert.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-700 hover:text-green-400 text-xs border border-green-900 hover:border-green-700 px-3 py-1.5 transition-colors flex-shrink-0 self-start md:self-center"
+                >
+                  ./view_credential
+                </a>
+
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="text-green-900 text-xs mt-3">// 3 certifications loaded · more in progress</p>
       </div>
 
       <div className="mt-10 border-t border-green-900 pt-6 max-w-4xl">
